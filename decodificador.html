@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decodificador</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="Script.js"></script>
+    <link rel="shortcut icon" href="imagens\juri icon.jpg type="image/x-icon">
+</head>
+<body>
+    <style>
+    *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: 0px;
+    }
+    body{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./background.jpg);
+    background-size: 100%;
+
+    }
+    </style>
+    <main class="main container"></main>
+    <header class="cabecario"></header>
+    <img src="imagens\background2.png" alt="logo">
+    <h1>Decodificador Alura - SF6 Juri</h1>
+    </header>
+    <div class="container-input"></div>
+    <div class="input">
+        <textarea  id="input-texto" placeholder="Digite seu texto aqui:"></textarea>
+        <p>Digite APENAS LETRAS MAIÚSCULAS!!!</p>
+    </div>
+
+    <div class="buttons">
+        <div class="container-btn">
+            <button onclick="criptografar()" class="btn-criptografar">Criptografar</button>
+            <button onclick="descriptografar()" class="btn-descriptografar">Descriptografar</button>
+        </div>
+    </div>
+    
+   
+    
+    <div class="icons"></div>
+    
+    <div class="icons">
+     <a href="http://"><ion-icon name="game-controller-outline"></ion-icon></a>
+     <a href="https://github.com/lucas-gab46"><img src="imagens\iconmonstr-github-1.svg" class="media-object  img-responsive img-thumbnail" ></a>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </div>
+    <div id="output">
+        <h2>Sua Mensagem aparece aqui!</h2>
+        <span>Digite um texto para Criptografar ou Descriptografar</span>
+    </div>
+
+    <main></main>
+    <footer class="rodape"></footer>
+    <div>
+        <h3>Desenvolvido por lucas-gab46</h3>   
+    </div>
+ 
+
+<script>
+    function criptografar() {
+        var texto = document.getElementById("input-texto").value;
+        var textoCriptografado = "";
+
+        if (texto === "") {
+            alert("Por favor! insira um texto para criptografar!");
+            return;
+        }
+
+        for (var i = 0; i < texto.length; i++) {
+            var char = texto.charAt(i);
+
+            if (char.match(/[A-Z]/)) {
+                var codigoAscii = char.charCodeAt(0) + 1;
+
+                if (codigoAscii > 90) {
+                    codigoAscii = 65;
+                }
+
+                textoCriptografado += String.fromCharCode(codigoAscii);
+            } else {
+                textoCriptografado += char;
+            }
+        }
+
+        document.getElementById("output").innerHTML = "<h2>Texto Criptografado Com Sucesso! :</h2><p>" + textoCriptografado + "</p>";
+    }
+
+    function descriptografar() {
+        var textoCriptografado = document.getElementById("input-texto").value;
+        var textoDescriptografado = "";
+
+        for (var i = 0; i < textoCriptografado.length; i++) {
+            var char = textoCriptografado.charAt(i);
+
+            if (char.match(/[A-Z]/)) {
+                var codigoAscii = char.charCodeAt(0) - 1;
+
+                if (codigoAscii < 65) {
+                    codigoAscii = 90;
+                }
+
+                textoDescriptografado += String.fromCharCode(codigoAscii);
+            } else {
+                textoDescriptografado += char;
+            }
+        }
+        document.getElementById("output").innerHTML = "<h2>Texto Descriptografado Com Sucesso! :</h2><p>" + textoDescriptografado + "</p>";
+    }
+</script>
+    
+    </div>
+
+    
+</body>
+</html>

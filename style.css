@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('imagens/background.jpg'); /* Define a imagem como fundo do corpo */
+    background-size: cover;
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.cabecalho h1 {
+    color: blueviolet;
+}
+
+.container-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.input {
+    width: 400px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#output {
+    width: 400px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.container-btn {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-criptografar,
+.btn-descriptografar {
+    padding: 10px 20px;
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-criptografar:hover,
+.btn-descriptografar:hover {
+    background-color: darkviolet;
+}
+
+.rodape {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.icons a {
+    color: white;
+}
+
+.container-input .input{
+display: flex;
+justify-content: space-between;
+padding: 2% 0 0 4%;
+}
+
+.container-input .input{
+width: 400px;
+height: 330px;
+}
+#input-texto{
+width: 345px;
+height: 330px;
+font-size: 20px;
+color: var(blueviolet);
+background: transparent;
+box-shadow: none;
+border: none;
+outline: 0;
+padding: 10px;
+text-transform: uppercase;
+}
+
+#output {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid; /* Adicionei "solid" para definir o estilo da borda */
+    border-radius: 20px;
+    width: 350px;
+    height: 400px;
+    margin-right: 3%;
+    padding: 20px; /* Adicionei padding para separar o texto das bordas */
+    text-align: right; /* Alinhamento do texto à direita */
+}
+
+#output h2 {
+text-align: center;
+font-size: 25px;
+color: blueviolet;
+}
+#output span{
+font-size: 16px;
+text-align: center;
+}
+#output img{
+max-width: 300px;
+max-width: 300px;
+width: auto;
+height: auto;
+margin-top: center;
+}
+
+.rodape{
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 2%;
+margin-top: 15px;
+background-color: blueviolet;
+color: grey;
+}
+.rodape h3{
+font-size: 16px;
+}
+.icons ion-icon{
+width: 25px;
+height: 25px;
+color: blueviolet;
+}
+
+.icons ion-icon:hover{
+color: gray;
+}
